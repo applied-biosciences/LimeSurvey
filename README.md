@@ -74,6 +74,8 @@ The published image is available in the London region:
 
 The current ECR image is Linux ARM64. Use ARM64-compatible ECS/Fargate or EC2 capacity. See [CALMOS-DEPLOYMENT.md](CALMOS-DEPLOYMENT.md) for the production checklist.
 
+The production service is available at [https://surveys.calmos.io/admin/](https://surveys.calmos.io/admin/).
+
 ## Requirements
 
 ### Minimal

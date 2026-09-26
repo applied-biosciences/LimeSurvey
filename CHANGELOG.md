@@ -7,3 +7,4 @@
 - Set standard password authentication as the displayed login method and blocklisted `TwoFactorAdminLogin`.
 - Added administrator environment settings and local deployment guidance.
 - Published the Linux ARM64 application image to Amazon ECR in `eu-west-2`: `956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:20260926-2211`.
+- Replaced the production ECS web service at `https://surveys.calmos.io` after its new LimeSurvey target passed the ALB health check.

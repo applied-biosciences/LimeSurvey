@@ -1,0 +1,42 @@
+{
+  "family": "calmos-limesurvey-production",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "runtimePlatform": {
+    "cpuArchitecture": "ARM64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "executionRoleArn": "arn:aws:iam::956978958967:role/calm-surveys-ecs-execution",
+  "taskRoleArn": "arn:aws:iam::956978958967:role/calm-surveys-ecs-task",
+  "containerDefinitions": [
+    {
+      "name": "web",
+      "image": "956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:20260926-2211",
+      "essential": true,
+      "portMappings": [{"containerPort": 80, "protocol": "tcp"}],
+      "environment": [
+        {"name": "CALMOS_DB_HOST", "value": "calmos-survey-production.chk2ie2eimif.eu-west-2.rds.amazonaws.com"},
+        {"name": "CALMOS_DB_PORT", "value": "3306"}
+      ],
+      "secrets": [
+        {"name": "CALMOS_DB_NAME", "valueFrom": "arn:aws:secretsmanager:eu-west-2:956978958967:secret:calmos-survey/production/database-XDR2J3:database::"},
+        {"name": "CALMOS_DB_USER", "valueFrom": "arn:aws:secretsmanager:eu-west-2:956978958967:secret:calmos-survey/production/database-XDR2J3:username::"},
+        {"name": "CALMOS_DB_PASSWORD", "valueFrom": "arn:aws:secretsmanager:eu-west-2:956978958967:secret:calmos-survey/production/database-XDR2J3:password::"},
+        {"name": "CALMOS_ADMIN_USER", "valueFrom": "arn:aws:secretsmanager:eu-west-2:956978958967:secret:calmos-survey/production/database-XDR2J3:admin_username::"},
+        {"name": "CALMOS_ADMIN_PASSWORD", "valueFrom": "arn:aws:secretsmanager:eu-west-2:956978958967:secret:calmos-survey/production/database-XDR2J3:admin_password::"},
+        {"name": "CALMOS_ADMIN_NAME", "valueFrom": "arn:aws:secretsmanager:eu-west-2:956978958967:secret:calmos-survey/production/database-XDR2J3:admin_name::"},
+        {"name": "CALMOS_ADMIN_EMAIL", "valueFrom": "arn:aws:secretsmanager:eu-west-2:956978958967:secret:calmos-survey/production/database-XDR2J3:admin_email::"}
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/calm-surveys",
+          "awslogs-region": "eu-west-2",
+          "awslogs-stream-prefix": "calmos-limesurvey"
+        }
+      }
+    }
+  ]
+}
