@@ -13,7 +13,7 @@
   "containerDefinitions": [
     {
       "name": "web",
-      "image": "956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:20260926-2211",
+      "image": "956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:20260926-2235",
       "essential": true,
       "portMappings": [{"containerPort": 80, "protocol": "tcp"}],
       "environment": [

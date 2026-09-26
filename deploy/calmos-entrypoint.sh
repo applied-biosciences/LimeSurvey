@@ -42,6 +42,25 @@ if [ "${1:-}" = "apache2-foreground" ]; then
     $statement = $pdo->prepare("UPDATE calmos_settings_global SET stg_value = ? WHERE stg_name = ?");
     $statement->execute(["CALMOS", "admintheme"]);
   '
+
+  # Keep the explicitly configured bootstrap administrator usable after restores.
+  php -r '
+    $pdo = new PDO(
+      "mysql:host=" . (getenv("CALMOS_DB_HOST") ?: "db") . ";port=" . (getenv("CALMOS_DB_PORT") ?: "3306") . ";dbname=" . (getenv("CALMOS_DB_NAME") ?: "calmos_survey"),
+      getenv("CALMOS_DB_USER") ?: "calmos",
+      getenv("CALMOS_DB_PASSWORD") ?: "calmos-local-only"
+    );
+    $user = getenv("CALMOS_ADMIN_USER") ?: "calmos-admin";
+    $password = getenv("CALMOS_ADMIN_PASSWORD") ?: "calmos-local-only";
+    $check = $pdo->prepare("SELECT uid FROM calmos_users WHERE users_name = ? LIMIT 1");
+    $check->execute([$user]);
+    $uid = $check->fetchColumn();
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    if ($uid) {
+      $statement = $pdo->prepare("UPDATE calmos_users SET password = ?, email = ?, full_name = ? WHERE uid = ?");
+      $statement->execute([$hash, getenv("CALMOS_ADMIN_EMAIL") ?: $user, getenv("CALMOS_ADMIN_NAME") ?: "CALMOS Administrator", $uid]);
+    }
+  '
 fi
 
 exec docker-php-entrypoint "$@"
