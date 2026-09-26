@@ -123,10 +123,10 @@ NOTE: Feel free to ask for functions, variables, etc, that you feel are missing 
                             <div class="row justify-content-center mb-3">
                                 <div
                                     id="{{ aSurveyInfo.id.surveylistrowjumbotron }}" {{ aSurveyInfo.attr.surveylistrowjumbotron }}>
-                                    <div class="img-fluid mx-auto d-block" role="img" aria-label="{{gT("LimeSurvey Logo")}}">
-                                        {{ include('./ls_logo_svg.twig') }}
+                                    <div class="img-fluid mx-auto d-block calmos-public-logo" role="img" aria-label="CALMOS Survey">
+                                        {{ image('./files/logo.png', 'CALMOS Survey', {class: 'img-fluid'}) }}
                                     </div>
-                                    <span class="text-center h3">{{ aSurveyInfo.sSiteName }}</span>
+                                    <span class="text-center h3">CALMOS Survey</span>
                                 </div>
                             </div>
                             <div class="row">
@@ -136,6 +136,9 @@ NOTE: Feel free to ask for functions, variables, etc, that you feel are missing 
                                         {{ include('./subviews/navigation/language_changer_form.twig') }}
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row justify-content-center mt-3 mb-3">
+                                <a href="/admin" class="btn btn-outline-primary col-12 col-md-4">Administrator login</a>
                             </div>
                             <div class="row">
                                 <div
