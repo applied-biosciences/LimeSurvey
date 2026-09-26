@@ -51,6 +51,29 @@ LimeSurvey is perfect for you if you are...
 
 ⚠️ **Repository**:  You can also access the development repository. Be aware that it may contain versions that are not fully tested.
 
+## CALMOS white-label deployment
+
+This fork includes a CALMOS Survey deployment, branded for the Clinical Adaptive Learning Model. It provides a CALMOS purple admin theme, the CALM logo, and standard username/password login with the TwoFactorAdminLogin plugin blocked.
+
+### Local run
+
+```sh
+docker compose up --build
+```
+
+Open `http://localhost:8090/admin`. On the first start, the stack creates the local administrator from the `CALMOS_ADMIN_*` variables. Copy `.env.example` to `.env` and replace all passwords before any shared use. Administrators can create additional users in **Configuration → Users and groups → Manage users**.
+
+### AWS ECR image
+
+The published image is available in the London region:
+
+```text
+956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:20260926-2211
+956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:latest
+```
+
+The current ECR image is Linux ARM64. Use ARM64-compatible ECS/Fargate or EC2 capacity. See [CALMOS-DEPLOYMENT.md](CALMOS-DEPLOYMENT.md) for the production checklist.
+
 ## Requirements
 
 ### Minimal

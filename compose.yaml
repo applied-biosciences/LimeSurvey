@@ -1,0 +1,40 @@
+services:
+  app:
+    build: .
+    ports:
+      - "${CALMOS_HTTP_PORT:-8090}:80"
+    environment:
+      CALMOS_DB_HOST: db
+      CALMOS_DB_PORT: 3306
+      CALMOS_DB_NAME: ${CALMOS_DB_NAME:-calmos_survey}
+      CALMOS_DB_USER: ${CALMOS_DB_USER:-calmos}
+      CALMOS_DB_PASSWORD: ${CALMOS_DB_PASSWORD:-calmos-local-only}
+      CALMOS_ADMIN_USER: ${CALMOS_ADMIN_USER:-calmos-admin}
+      CALMOS_ADMIN_PASSWORD: ${CALMOS_ADMIN_PASSWORD:-calmos-local-only}
+      CALMOS_ADMIN_NAME: ${CALMOS_ADMIN_NAME:-CALMOS Administrator}
+      CALMOS_ADMIN_EMAIL: ${CALMOS_ADMIN_EMAIL:-admin@calmos.local}
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: ${CALMOS_DB_NAME:-calmos_survey}
+      MARIADB_USER: ${CALMOS_DB_USER:-calmos}
+      MARIADB_PASSWORD: ${CALMOS_DB_PASSWORD:-calmos-local-only}
+      MARIADB_ROOT_PASSWORD: ${CALMOS_DB_ROOT_PASSWORD:-calmos-root-local-only}
+    volumes:
+      - calmos-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+volumes:
+  calmos-db:
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 10.230.0.0/24

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <metadata>
+        <name>CALMOS</name>
+        <creationDate>2026-09-26</creationDate>
+        <author>Applied Biosciences</author>
+        <authorEmail>support@appliedbiosciences.com</authorEmail>
+        <copyright>CALMOS branding; LimeSurvey remains licensed under GPL-2.0-or-later.</copyright>
+        <license>GNU General Public License version 2 or later</license>
+        <version>1.0</version>
+        <description>CALMOS Clinical Adaptive Learning Model administration interface.</description>
+        <presentation>Welcome to CALMOS Survey. Create, manage, and analyse clinical adaptive learning surveys from one secure workspace.</presentation>
+        <basecolor>#5B2C91</basecolor>
+    </metadata>
+    <compatibility><version>7.0</version><version>6.0</version></compatibility>
+    <files>
+        <css><filename>calmos.css</filename></css>
+        <js></js>
+        <rtl><css><filename>calmos-rtl.css</filename></css><js></js></rtl>
+    </files>
+    <engine><use_asset_manager_in_debug_mode>false</use_asset_manager_in_debug_mode></engine>
+</config>

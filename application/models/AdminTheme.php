@@ -338,6 +338,8 @@ class AdminTheme extends CFormModel
         if (!YII_DEBUG || self::$use_asset_manager || Yii::app()->getConfig('use_asset_manager')) {
             if (file_exists($this->path . '/images/logo.svg')) {
                 define('LOGO_URL', App()->getAssetManager()->publish($this->path . '/images/logo.svg'));
+            } elseif (file_exists($this->path . '/images/logo.png')) {
+                define('LOGO_URL', App()->getAssetManager()->publish($this->path . '/images/logo.png'));
             } else {
                 define('LOGO_URL', App()->getAssetManager()->publish(App()->getConfig("styledir") . '/Sea_Green/images/logo.svg'));
             }
@@ -349,6 +351,8 @@ class AdminTheme extends CFormModel
         } else {
             if (file_exists($this->path . '/images/logo.svg')) {
                 define('LOGO_URL', $this->sTemplateUrl . '/images/logo.svg');
+            } elseif (file_exists($this->path . '/images/logo.png')) {
+                define('LOGO_URL', $this->sTemplateUrl . '/images/logo.png');
             } else {
                 define('LOGO_URL', App()->getConfig('styleurl') . '/Sea_Green/images/logo.svg');
             }
@@ -375,6 +379,9 @@ class AdminTheme extends CFormModel
      */
     private function isStandardAdminTheme($sAdminThemeName)
     {
-        return $sAdminThemeName === 'Sea_Green';
+        // CALMOS is shipped with the application just like Sea_Green. Resolve any
+        // packaged theme from the standard theme directory rather than treating it
+        // as an uploaded theme.
+        return is_dir(Yii::app()->getConfig('styledir') . DIRECTORY_SEPARATOR . $sAdminThemeName);
     }
 }
