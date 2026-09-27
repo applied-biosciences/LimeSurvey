@@ -5,8 +5,7 @@
  */
 
 ?>
-<noscript>If you see this you have probably JavaScript deactivated. LimeSurvey does not work without Javascript being
-    activated in the browser!
+<noscript>CALMOS Survey requires JavaScript to be activated in your browser.
 </noscript>
 <div class="login">
     <div class="row main-body">
