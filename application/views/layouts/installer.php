@@ -5,8 +5,8 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="author" content=""/>
 
-    <link rel="shortcut icon" href="<?php echo Yii::app()->getConfig('styleurl'); ?>favicon.ico" type="image/x-icon"/>
-    <link rel="icon" href="<?php echo Yii::app()->getConfig('styleurl'); ?>favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="<?php echo Yii::app()->baseUrl; ?>/themes/admin/CALMOS/images/favicon.png" type="image/png"/>
+    <link rel="icon" href="<?php echo Yii::app()->baseUrl; ?>/themes/admin/CALMOS/images/favicon.png" type="image/png"/>
     <?php
     $script = "$(function() {
         $('.on').animate({
@@ -19,22 +19,21 @@
         });";
     App()->getClientScript()->registerScript('installer', $script);
     ?>
-    <link rel="icon" href="<?php echo Yii::app()->baseUrl; ?>/images/favicon.ico"/>
-    <title><?php eT("LimeSurvey installer"); ?></title>
+    <title>CALMOS Survey installer</title>
 </head>
 
 <body>
 <div class="container">
     <div class="row">
         <div class="col-12" style='padding-top:20px'>
-            <h1 class="pagetitle"><?php eT("LimeSurvey installer"); ?></h1>
+            <h1 class="pagetitle">CALMOS Survey installer</h1>
         </div>
     </div>
     <?php echo $content; ?>
 
     <div class="row m-3 mt-5">
         <div class="col-12" style="text-align: center;">
-            <img src="<?php echo Yii::app()->baseUrl; ?>/installer/images/poweredby.png" alt="Powered by LimeSurvey"/>
+            <img src="<?php echo Yii::app()->baseUrl; ?>/themes/admin/CALMOS/images/logo.png" alt="CALMOS Survey" style="max-height: 180px; width: auto;"/>
         </div>
     </div>
 </div>

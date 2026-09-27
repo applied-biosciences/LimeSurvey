@@ -24,6 +24,8 @@ return [
         ],
     ],
     'config' => [
+        'sitename' => 'CALMOS Survey',
+        'siteadminname' => 'CALMOS Survey',
         'admintheme' => 'CALMOS',
         'default_displayed_auth_method' => 'Authdb',
         // The core 2FA plugin is deliberately unavailable in this white-label deployment.

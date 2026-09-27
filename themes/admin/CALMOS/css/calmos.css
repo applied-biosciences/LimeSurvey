@@ -19384,6 +19384,11 @@ a,
 .text-primary {
   color: #5B2C91;
 }
+
+body,
+.login .content-right {
+  background-color: #E0A4ED;
+}
 .welcome .recent-activity {
   margin-top: 1.72rem;
   font-size: 0.95rem;

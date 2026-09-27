@@ -61,7 +61,7 @@ gT('Themes');
                         <h5
                             class="modal-title"
                             id="welcome-modal-title"
-                        ><?php echo sprintf(gT("Welcome to %s!"), 'LimeSurvey'); ?></h5>
+                        ><?php echo sprintf(gT("Welcome to %s!"), 'CALMOS Survey'); ?></h5>
                         <button
                             type="button"
                             class="btn-close"
@@ -213,4 +213,3 @@ gT('Themes');
     <!-- Notification setting -->
     <input type="hidden" id="absolute_notification" />
 </div>
-

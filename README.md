@@ -1,9 +1,9 @@
 <div id="top"></div>
 <p align="center">
-<img src="https://www.limesurvey.org/images/limesurvey/svg/logo_limesurvey_head.svg" width="400" alt='LimeSurvey Logo' />
+<img src="themes/admin/CALMOS/images/logo.png" width="300" alt="CALMOS Survey logo" />
 </p>
 
-# LimeSurvey: The world’s #1 open-source survey platform 
+# CALMOS Survey
 It's what we love and do best since 2006...
 
 🌐 [Website](https://www.limesurvey.org) · 🔮 [Demo](https://demo.limesurvey.org/admin) · 📚 [Documentation](https://www.limesurvey.org/manual) · ⚙️ [Request a feature](https://bugs.limesurvey.org) · 🐛 [Report a bug](https://bugs.limesurvey.org) · 🗨️ [Forums](https://forums.limesurvey.org) · 🗨️ [Discord](https://discord.gg/DEjguXn)
@@ -68,7 +68,6 @@ Open `http://localhost:8090/admin`. On the first start, the stack creates the lo
 The published image is available in the London region:
 
 ```text
-956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:20260926-2211
 956978958967.dkr.ecr.eu-west-2.amazonaws.com/calmos-survey:latest
 ```
 

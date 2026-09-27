@@ -19334,6 +19334,7 @@ input[type=number] {
 .btn-primary, .bg-primary { background-color: #5B2C91 !important; border-color: #5B2C91 !important; }
 .btn-primary:hover, .btn-primary:focus { background-color: #45216E !important; border-color: #45216E !important; }
 a, .text-primary { color: #5B2C91; }
+body, .login .content-right { background-color: #E0A4ED; }
 .welcome .recent-activity {
   margin-top: 1.72rem;
   font-size: 0.95rem;

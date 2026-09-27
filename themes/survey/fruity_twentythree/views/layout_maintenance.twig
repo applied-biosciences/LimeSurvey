@@ -34,8 +34,8 @@
             NOTE: YES, it's very bad to do it here. It a first cycle. I'll see what to do once I'll done all those kind of error page
             TODO: move it to a separated css file
         #}
-        <meta name="generator" content="LimeSurvey http://www.limesurvey.org" />
-        <link rel="shortcut icon" href="favicon.ico" />
+        <meta name="generator" content="CALMOS Survey" />
+        <link rel="shortcut icon" href="{{ imageSrc('./files/favicon.png') }}" type="image/png" />
     </head>
 
     <body class=" {{ aSurveyInfo.class.body }} font-{{  aSurveyInfo.options.font }} lang-{{aSurveyInfo.languagecode}} {{aSurveyInfo.surveyformat}} {% if( aSurveyInfo.options.brandlogo == "on") %}brand-logo{%endif%}" {{ aSurveyInfo.attr.body }} >

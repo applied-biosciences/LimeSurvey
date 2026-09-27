@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-27 — Complete CALMOS visual identity
+
+- Renamed user-facing application titles and metadata to CALMOS Survey.
+- Added the supplied CALMOS favicon to public, administration, error, maintenance, and installer pages.
+- Replaced remaining visible LimeSurvey marks with CALMOS assets.
+- Applied the CALMOS purple palette and the requested daytime background colour `#E0A4ED`.
+- Published the deployment as ECR image `calmos-survey:20260927-0315`.
+
 ## 2026-09-26 — CALMOS white-label deployment
 
 - Added the CALMOS purple administration theme and supplied CALM logo.

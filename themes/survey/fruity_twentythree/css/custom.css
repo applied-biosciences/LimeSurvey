@@ -6,3 +6,60 @@
     It will be loaded last, so you can override any other property.
     Also, it will never be updated. So if you inheritate a core template and just add here some CSS, you'll still benefit of all the updates
 */
+
+:root {
+    --bs-primary: #5b2c91;
+    --bs-primary-rgb: 91, 44, 145;
+    --bs-link-color: #5b2c91;
+    --bs-link-hover-color: #45216e;
+}
+
+body {
+    background-color: #e0a4ed !important;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #5b2c91;
+    border-color: #5b2c91;
+}
+
+.btn-primary:hover {
+    background-color: #45216e;
+    border-color: #45216e;
+}
+
+.btn-outline-primary {
+    color: #5b2c91;
+    border-color: #5b2c91;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    color: #fff;
+    background-color: #5b2c91;
+    border-color: #5b2c91;
+}
+
+.calmos-public-logo img {
+    width: auto;
+    max-height: 260px;
+    object-fit: contain;
+}
+
+.calmos-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #32165f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.calmos-footer-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+}

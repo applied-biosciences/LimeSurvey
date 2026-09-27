@@ -41,6 +41,8 @@ if [ "${1:-}" = "apache2-foreground" ]; then
     );
     $statement = $pdo->prepare("UPDATE calmos_settings_global SET stg_value = ? WHERE stg_name = ?");
     $statement->execute(["CALMOS", "admintheme"]);
+    $statement->execute(["CALMOS Survey", "sitename"]);
+    $statement->execute(["CALMOS Survey", "siteadminname"]);
   '
 
   # Keep the explicitly configured bootstrap administrator usable after restores.
